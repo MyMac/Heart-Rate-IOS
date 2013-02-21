@@ -41,10 +41,18 @@
 }
 //
 - (IBAction)connectButtonPressed:(id)sender {
+    //newly added method
     
-    [self.cm scanForPeripheralsWithServices:@[/*self.heartRateServiceUUID*/HRMController.serviceUUID] options: @{CBCentralManagerScanOptionAllowDuplicatesKey: @ NO}];//doubt      Starting a scan
-    NSLog(@"started scanning...");
+    if (self.hrmController) {
+        [self.cm cancelPeripheralConnection:self.hrmController.peripheral];
+        NSLog(@"Disconnecting Peripheral...");
+    }
     
+    else{
+    
+       [self.cm scanForPeripheralsWithServices:@[/*self.heartRateServiceUUID*/HRMController.serviceUUID] options: @{CBCentralManagerScanOptionAllowDuplicatesKey: @ NO}];//doubt      Starting a scan
+       NSLog(@"started scanning...");
+    }
 }
 
 //Handling a discovery (when peripheral is discovered)
@@ -79,6 +87,7 @@
 -(void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
     NSLog(@"did connect to %@",[peripheral name]);
     [self.hrmController didConnect];
+    [self.connectButton setTitle:@"Disconnect" forState:UIControlStateNormal];//added after dragging connect butten again to change it as outlet
 }
 
 -(void) didUpdateMeasurement: (NSNumber *) measurement{

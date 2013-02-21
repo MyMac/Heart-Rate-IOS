@@ -14,6 +14,7 @@
 @interface ViewController : UIViewController <CBCentralManagerDelegate, HRMControllerDelegate> {
     CBCentralManager *cm;
 }
+@property (weak, nonatomic) IBOutlet UIButton *connectButton;
 
 
 

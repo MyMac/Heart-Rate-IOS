@@ -49,15 +49,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3Gh-yW-zJL" firstAttribute="leading" secondItem="PXz-Hg-oXc" secondAttribute="leading" type="default" id="05e-J5-DxW"/>
+                            <constraint firstItem="PXz-Hg-oXc" firstAttribute="trailing" secondItem="3Gh-yW-zJL" secondAttribute="trailing" type="default" id="A9O-lV-nNT"/>
                             <constraint firstItem="8ME-tj-m5f" firstAttribute="top" secondItem="3" secondAttribute="top" constant="228" id="EEh-SO-ZKB"/>
                             <constraint firstItem="8ME-tj-m5f" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="56" id="K6l-dF-CK9"/>
-                            <constraint firstItem="PXz-Hg-oXc" firstAttribute="top" secondItem="3" secondAttribute="top" constant="79" id="KzF-ga-kgJ"/>
+                            <constraint firstItem="PXz-Hg-oXc" firstAttribute="top" secondItem="3" secondAttribute="top" constant="82" id="NdB-eO-7Zt"/>
+                            <constraint firstItem="PXz-Hg-oXc" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="70" id="dF6-fB-GvY"/>
                             <constraint firstAttribute="bottom" secondItem="3Gh-yW-zJL" secondAttribute="bottom" constant="78" id="dks-ZM-5Mi"/>
-                            <constraint firstItem="PXz-Hg-oXc" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="91" id="xut-LG-9K9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="connectButton" destination="3Gh-yW-zJL" id="UVf-18-iEI"/>
                         <outlet property="measurementLabel" destination="PXz-Hg-oXc" id="zt7-04-Kly"/>
                         <outlet property="statusLabel" destination="8ME-tj-m5f" id="G9m-pQ-Gcy"/>
                     </connections>
