@@ -14,6 +14,11 @@
 
 @property CBPeripheral *peripheral;
 
+//service and characteristic reference
+@property CBService *service;
+@property CBCharacteristic *charcteristic;
+//
+
 -(id) initWithPeripheral: (CBPeripheral *)peripheral; //our own defined methods including initWithPheiphera
 -(void) didConnect;
 -(void)didDisconnect;

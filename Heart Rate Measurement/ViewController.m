@@ -19,6 +19,8 @@
 @synthesize measurementLabel;
 @synthesize statusLabel;
 @synthesize hrmController = _hrmController;
+//@synthesize service = _service;
+//@synthesize charcteristic = _charcteristic;
 
 - (void)viewDidLoad
 {
@@ -70,5 +72,12 @@
     [self.statusLabel setText:@"Bluetooth is OFF"];
 }
     }
+
+//Handling the connect
+-(void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
+    NSLog(@"did connect to %@",[peripheral name]);
+    [self.hrmController didConnect];
+}
+
 
 @end

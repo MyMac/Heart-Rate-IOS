@@ -25,6 +25,11 @@
 @property HRMController *hrmController;
 //
 
+//service and characteristic reference
+//@property CBService *service;
+//@property CBCharacteristic *charcteristic;
+//
+
 - (IBAction)connectButtonPressed:(id)sender;
 
 

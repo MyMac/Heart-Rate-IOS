@@ -11,6 +11,8 @@
 @implementation HRMController
 
 @synthesize peripheral = _peripheral;
+@synthesize service = _service;
+@synthesize charcteristic = _charcteristic;
 
 //initialization method to store the CBperipheral reference and set its delegate to the HRMcntroller object
 
@@ -26,7 +28,8 @@
     }
 -(void) didConnect
 {
-    
+    [self.peripheral discoverServices:@[HRMController.serviceUUID]];//scanning for service
+     NSLog(@"started scan for services...");
 }
 -(void) didDisconnect
 {
@@ -41,4 +44,20 @@
     return [CBUUID UUIDWithString:@"2A37"];
 }
 
+//discover service and characteristic needed
+
+-(void) peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error{
+    for (CBService *s in peripheral.services){
+        if([s.UUID isEqual:HRMController.serviceUUID]){
+            NSLog(@"found heart rate service");
+            self.service = s;
+            [self.peripheral discoverCharacteristics:@[HRMController.characteristicUUID] forService:self.service];
+        }
+    }
+}
+
+//after the required characyeristic discovered
+-(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error{
+    
+}
 @end
