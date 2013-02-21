@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 @property CBCentralManager *cm;
 @end
@@ -79,5 +80,9 @@
     [self.hrmController didConnect];
 }
 
+-(void) didUpdateMeasurement: (NSNumber *) measurement{
+    NSLog(@"updated mesurement in view controller: %@", measurement);
+    self.measurementLabel.text = measurement.stringValue;
+}
 
 @end

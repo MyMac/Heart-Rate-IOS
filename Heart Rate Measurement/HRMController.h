@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 // #import <UIKit/UIKit.h>
+@protocol HRMControllerDelegate <NSObject>
+-(void) didUpdateMeasurement: (NSNumber *) measurement;
+@end
 
 @interface HRMController : NSObject <CBPeripheralDelegate>
+
+
 
 @property CBPeripheral *peripheral;
 
@@ -18,6 +23,9 @@
 @property CBService *service;
 @property CBCharacteristic *charcteristic;
 //
+
+//defining the delegate
+
 
 -(id) initWithPeripheral: (CBPeripheral *)peripheral; //our own defined methods including initWithPheiphera
 -(void) didConnect;

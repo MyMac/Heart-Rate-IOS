@@ -67,5 +67,11 @@
     [self.peripheral setNotifyValue:YES forCharacteristic:self.charcteristic];//enabling the notifications
 }
 
+//after receving notifications we must check for any uodates in characeristic value(here heart rate measurement)
+
+-(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
+    
+}
+
 
 @end

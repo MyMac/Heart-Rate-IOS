@@ -11,9 +11,12 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "HRMController.h"
 
-@interface ViewController : UIViewController <CBCentralManagerDelegate> {
+@interface ViewController : UIViewController <CBCentralManagerDelegate, HRMControllerDelegate> {
     CBCentralManager *cm;
 }
+
+
+
 
 @property (weak, nonatomic) IBOutlet UILabel *measurementLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
