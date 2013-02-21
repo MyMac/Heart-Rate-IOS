@@ -95,4 +95,19 @@
     self.measurementLabel.text = measurement.stringValue;
 }
 
+//ading diddisconnectPeripheral
+
+-(void) centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
+    NSLog(@"Did disconnect peripheral %@",[peripheral name]);
+    [self. connectButton setTitle:@"Connect" forState:UIControlStateNormal];
+    measurementLabel.text = @"-";
+    
+    if (self.hrmController.peripheral != peripheral) {
+        return;
+    }
+    [_hrmController didDisconnect];
+    _hrmController = nil;
+    
+}
+
 @end

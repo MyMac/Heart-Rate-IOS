@@ -34,6 +34,7 @@
 }
 -(void) didDisconnect
 {
+    [self.peripheral setNotifyValue: NO forCharacteristic:self.charcteristic];
     
 }
 
