@@ -41,7 +41,7 @@
 //
 - (IBAction)connectButtonPressed:(id)sender {
     
-    [self.cm scanForPeripheralsWithServices:@[/*self.heartRateServiceUUID*/HRMController.serviceUUID] options: @{CBCentralManagerScanOptionAllowDuplicatesKey: NO}];//doubt      Starting a scan
+    [self.cm scanForPeripheralsWithServices:@[/*self.heartRateServiceUUID*/HRMController.serviceUUID] options: @{CBCentralManagerScanOptionAllowDuplicatesKey: @ NO}];//doubt      Starting a scan
     NSLog(@"started scanning...");
     
 }

@@ -58,6 +58,14 @@
 
 //after the required characyeristic discovered
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error{
-    
+    for( CBCharacteristic *c in service.characteristics){
+        if([c.UUID isEqual:HRMController.characteristicUUID]){
+            NSLog(@"found heart rate measurement characteristic.");
+            self.charcteristic = c;
+        }
+    }
+    [self.peripheral setNotifyValue:YES forCharacteristic:self.charcteristic];//enabling the notifications
 }
+
+
 @end
