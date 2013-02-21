@@ -8,10 +8,25 @@
 
 
 #import <UIKit/UIKit.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+#import "HRMController.h"
 
-@interface ViewController : UIViewController
-- (IBAction)connectButtonPressed:(id)sender;
+@interface ViewController : UIViewController <CBCentralManagerDelegate> {
+    CBCentralManager *cm;
+}
+
 @property (weak, nonatomic) IBOutlet UILabel *measurementLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+
+//Newly added property
+@property HRMController *hrmController;
+//
+
+//by us
+@property CBUUID *heartRateServiceUUID;
+
+- (IBAction)connectButtonPressed:(id)sender;
+
+
 
 @end

@@ -18,6 +18,8 @@
 		EE9A9C1A16D67AB4006549B9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A9C1916D67AB4006549B9 /* Default-568h@2x.png */; };
 		EE9A9C1D16D67AB4006549B9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9A9C1B16D67AB4006549B9 /* MainStoryboard.storyboard */; };
 		EE9A9C2016D67AB4006549B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9A9C1F16D67AB4006549B9 /* ViewController.m */; };
+		EE9A9C2716D6831E006549B9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9A9C2616D6831E006549B9 /* CoreBluetooth.framework */; };
+		EE9A9C2A16D69849006549B9 /* HRMController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9A9C2916D69849006549B9 /* HRMController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		EE9A9C1C16D67AB4006549B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EE9A9C1E16D67AB4006549B9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EE9A9C1F16D67AB4006549B9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EE9A9C2616D6831E006549B9 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		EE9A9C2816D69849006549B9 /* HRMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRMController.h; sourceTree = "<group>"; };
+		EE9A9C2916D69849006549B9 /* HRMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRMController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE9A9C2716D6831E006549B9 /* CoreBluetooth.framework in Frameworks */,
 				EE9A9C0416D67AB4006549B9 /* UIKit.framework in Frameworks */,
 				EE9A9C0616D67AB4006549B9 /* Foundation.framework in Frameworks */,
 				EE9A9C0816D67AB4006549B9 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +79,7 @@
 		EE9A9C0216D67AB4006549B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE9A9C2616D6831E006549B9 /* CoreBluetooth.framework */,
 				EE9A9C0316D67AB4006549B9 /* UIKit.framework */,
 				EE9A9C0516D67AB4006549B9 /* Foundation.framework */,
 				EE9A9C0716D67AB4006549B9 /* CoreGraphics.framework */,
@@ -88,6 +95,8 @@
 				EE9A9C1B16D67AB4006549B9 /* MainStoryboard.storyboard */,
 				EE9A9C1E16D67AB4006549B9 /* ViewController.h */,
 				EE9A9C1F16D67AB4006549B9 /* ViewController.m */,
+				EE9A9C2816D69849006549B9 /* HRMController.h */,
+				EE9A9C2916D69849006549B9 /* HRMController.m */,
 				EE9A9C0A16D67AB4006549B9 /* Supporting Files */,
 			);
 			path = "Heart Rate Measurement";
@@ -176,6 +185,7 @@
 				EE9A9C1016D67AB4006549B9 /* main.m in Sources */,
 				EE9A9C1416D67AB4006549B9 /* AppDelegate.m in Sources */,
 				EE9A9C2016D67AB4006549B9 /* ViewController.m in Sources */,
+				EE9A9C2A16D69849006549B9 /* HRMController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +308,7 @@
 				EE9A9C2516D67AB4006549B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
