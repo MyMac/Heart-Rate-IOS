@@ -10,5 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)connectButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *measurementLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
