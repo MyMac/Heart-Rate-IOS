@@ -57,6 +57,7 @@
     self.hrmController = [[HRMController alloc] initWithPeripheral:peripheral];
     [self.cm connectPeripheral:self.hrmController.peripheral options:@{CBConnectPeripheralOptionNotifyOnDisconnectionKey: @YES}];
     NSLog(@"connecting to %@...", self.hrmController.peripheral);
+    self.hrmController.delegate = self;//this is declared after defining HRMController Delegate
 }
 
 //New addition by us regarding the state of the bluetooth

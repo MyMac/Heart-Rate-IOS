@@ -15,7 +15,8 @@
 
 @interface HRMController : NSObject <CBPeripheralDelegate>
 
-
+//property for HRMdelegate
+@property id<HRMControllerDelegate> delegate;
 
 @property CBPeripheral *peripheral;
 
@@ -35,5 +36,6 @@
 //static class properties hence + sign (class method)
 +(CBUUID *) serviceUUID;
 +(CBUUID *) characteristicUUID;
+-(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error;
 
 @end

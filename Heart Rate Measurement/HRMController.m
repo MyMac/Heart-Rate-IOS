@@ -13,6 +13,7 @@
 @synthesize peripheral = _peripheral;
 @synthesize service = _service;
 @synthesize charcteristic = _charcteristic;
+@synthesize delegate = _delegate;
 
 //initialization method to store the CBperipheral reference and set its delegate to the HRMcntroller object
 
@@ -71,6 +72,20 @@
 
 -(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
     
+    NSUInteger *flags = (NSUInteger *) [[[characteristic value] subdataWithRange:NSMakeRange(0,1)]bytes];
+    
+    NSUInteger length;
+    if(*flags & 0x01)
+    {
+        length = 2;
+    }
+    else
+    {
+        length = 1;
+    }
+    NSUInteger *measurement = (NSUInteger *) [[[characteristic value]subdataWithRange:NSMakeRange(1, length)]bytes];
+    
+    [self .delegate didUpdateMeasurement:@(*measurement)];
 }
 
 
