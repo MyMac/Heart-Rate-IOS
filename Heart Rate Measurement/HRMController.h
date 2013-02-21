@@ -18,4 +18,9 @@
 -(void) didConnect;
 -(void)didDisconnect;
 
+//storing the UUID's in better place
+//static class properties hence + sign (class method)
++(CBUUID *) serviceUUID;
++(CBUUID *) characteristicUUID;
+
 @end

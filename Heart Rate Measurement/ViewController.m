@@ -15,13 +15,14 @@
 
 @implementation ViewController
 
-@synthesize heartRateServiceUUID = _heartRateUUID;
+//@synthesize heartRateServiceUUID = _heartRateUUID;
 @synthesize measurementLabel;
 @synthesize statusLabel;
+@synthesize hrmController = _hrmController;
 
 - (void)viewDidLoad
 {
-    _heartRateUUID = [CBUUID UUIDWithString:@"180D"];
+   // _heartRateUUID = [CBUUID UUIDWithString:@"180D"];
     [super viewDidLoad];
     cm = [[CBCentralManager alloc] initWithDelegate:self queue:nil];   //initializing the CB central manager
     
@@ -38,7 +39,7 @@
 //
 - (IBAction)connectButtonPressed:(id)sender {
     
-    [self.cm scanForPeripheralsWithServices:@[self.heartRateServiceUUID] options: @{CBCentralManagerScanOptionAllowDuplicatesKey: NO}];//doubt      Starting a scan
+    [self.cm scanForPeripheralsWithServices:@[/*self.heartRateServiceUUID*/HRMController.serviceUUID] options: @{CBCentralManagerScanOptionAllowDuplicatesKey: NO}];//doubt      Starting a scan
     NSLog(@"started scanning...");
     
 }
@@ -47,7 +48,12 @@
 
 -(void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    NSLog(@"Discovered peripheral %@", [peripheral name]);  
+    //NSLog(@"Discovered peripheral %@", [peripheral name]);
+    // After getting discovered by peripheral we need to first stopscan, create HRMController and then connect to perpheral/
+    [self.cm stopScan];
+    self.hrmController = [[HRMController alloc] initWithPeripheral:peripheral];
+    [self.cm connectPeripheral:self.hrmController.peripheral options:@{CBConnectPeripheralOptionNotifyOnDisconnectionKey: @YES}];
+    NSLog(@"connecting to %@...", self.hrmController.peripheral);
 }
 
 //New addition by us regarding the state of the bluetooth

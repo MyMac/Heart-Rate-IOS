@@ -18,12 +18,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *measurementLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
+//by us
+//@property CBUUID *heartRateServiceUUID;
+
 //Newly added property
 @property HRMController *hrmController;
 //
-
-//by us
-@property CBUUID *heartRateServiceUUID;
 
 - (IBAction)connectButtonPressed:(id)sender;
 

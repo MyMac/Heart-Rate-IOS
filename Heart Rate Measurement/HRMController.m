@@ -33,4 +33,12 @@
     
 }
 
++(CBUUID*) serviceUUID{
+    return [CBUUID UUIDWithString:@"i80D"];
+}
+
++(CBUUID*) characteristicUUID{
+    return [CBUUID UUIDWithString:@"2A37"];
+}
+
 @end
